@@ -1,10 +1,3 @@
-
-
-
-
-//html elements
-
-
 const searchBox = document.querySelector('#searchBox')
 const searchButton = document.querySelector('#searchButton')
 const bookList = document.querySelector('#bookList')
@@ -18,7 +11,6 @@ searchButton.addEventListener("click", async function () {
        
     })
         .then(function (res) {
-        
         bookList.innerHTML=''
         
         const booksFound = res.data.items.map((book)=>book.volumeInfo)
@@ -31,9 +23,7 @@ searchButton.addEventListener("click", async function () {
                 const li = document.createElement('li')
                 li.classList.add('bookContainer')
                 bookList.appendChild(li)
-                  
-                
-                
+               
                 const bookInfo = document.createElement('div')
                 bookInfo.classList.add('bookInfo')
                 li.appendChild(bookInfo)
@@ -57,8 +47,7 @@ searchButton.addEventListener("click", async function () {
                     bookDescription.classList.add('bookDescription')
                     bookDescription.innerText = book.description
                     section.appendChild(bookDescription)
-                }
-                
+                }   
             }
         }
       });
